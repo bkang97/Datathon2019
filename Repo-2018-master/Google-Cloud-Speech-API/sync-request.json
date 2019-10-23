@@ -1,0 +1,16 @@
+$ sox audio_test2.wav audio_no_silence4.wav silence -l 1 0.1 1% -1 2.0 1%
+
+{"config": {
+      "encoding":"MULAW",
+      "sampleRateHertz": 8000,
+      "languageCode": "pt-BR",
+      "enableWordTimeOffsets": false,
+    "enableAutomaticPunctuation": false,
+      "enableSpeakerDiarization": true,
+        "diarizationSpeakerCount": 2,
+    "useEnhanced": true,
+ "audioChannelCount": 1},
+  "audio": {
+      "uri":"gs://storage/audio_no_silence4.wav"
+  }
+}

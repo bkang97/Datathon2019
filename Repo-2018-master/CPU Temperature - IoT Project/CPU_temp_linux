@@ -1,0 +1,40 @@
+# OPTION 1
+
+import subprocess
+import shlex
+import time
+import re
+def measure_temp():
+        temp = subprocess.Popen(shlex.split('sensors'),
+                                stdout=subprocess.PIPE,
+                                bufsize=10, universal_newlines=True)
+        time.sleep(1)
+        return temp.communicate()[0]
+    
+while True:
+    str1=measure_temp().split()[9]
+    print(int(re.findall('\d+', str1 )[0]))
+
+# OPTION 2
+
+import subprocess
+import shlex
+import time
+
+def measure_temp():
+        temp = subprocess.Popen(shlex.split('sensors -u'),
+                                stdout=subprocess.PIPE,
+                                bufsize=10, universal_newlines=True)
+        return temp.communicate()
+    
+while True:
+    string=measure_temp()[0]
+    print(string.split()[8])
+    time.sleep(5)
+
+
+############# Raspberry Pi 3:
+temp = subprocess.Popen(shlex.split('/opt/vc/bin/vcgencmd measure_temp'),
+                                stdout=subprocess.PIPE,
+                                bufsize=10, universal_newlines=True)
+float(temp.communicate()[0][5:9])

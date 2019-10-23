@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "MessageID": {
+      "type": "object",
+      "properties": {
+        "S": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "S"
+      ]
+    },
+    "type": {
+      "type": "object",
+      "properties": {
+        "S": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "S"
+      ]
+    },
+    "page": {
+      "type": "object",
+      "properties": {
+        "S": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "S"
+      ]
+    }
+  },
+  "required": [
+    "MessageID",
+    "type",
+    "page"
+  ]
+}
